@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { HiMenu, HiX } from "react-icons/hi";
 import { FaArrowRightLong } from "react-icons/fa6";
+import Navbar from "./Navbar";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -163,6 +164,7 @@ const Header = () => {
           </NavLink>
         </div>
       )}
+      <Navbar />
     </nav>
   );
 };
