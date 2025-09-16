@@ -68,12 +68,12 @@ const Header = () => {
 
             {/* Request a Quote Button (Desktop) */}
           </div>
-          <div>
+          <div className="max-md:hidden ">
             <NavLink
               to="/quote"
               className={({ isActive }) =>
                 isActive
-                  ? "ml-4 px-4 py-2 bg-blue-600 text-white rounded flex items-center gap-2"
+                  ? "ml-4 px-4 py-2 bg-blue-600 text-white rounded flex items-center gap-2 md:leading-72"
                   : "ml-4 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition flex items-center gap-2 group"
               }
             >

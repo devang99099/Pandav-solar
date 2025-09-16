@@ -11,27 +11,27 @@ const Home = () => {
     >
       <div className="max-w-[1920px] w-full px-4 sm:px-6 lg:px-8 mx-auto">
         <div className="py-6 max-w-4xl text-start">
-          <h1 className="text-blue-500 text-7xl font-bold mb-4 leading-tight space-x-2">
+          <h1 className="text-blue-500 text-7xl font-bold mb-4 leading-tight space-x-2 max-lg:text-5xl max-lg:leading-snug">
             WELCOME TO PANDAV SOLAR
           </h1>
         </div>
 
         <div className=" max-w-4xl text-start">
-          <p className="text-black font-semibold text-2xl mb-8 leading-[1.7]">
+          <p className="text-black font-semibold text-2xl mb-8 leading-[1.7] max-lg:text-lg ">
             Harness the Power of the Sun with Our Cutting-Edge Solar Solutions
             Tailored for Your Home and Business Needs.
           </p>
 
-          <div className="flex space-x-13 font-medium">
+          <div className="flex space-x-13 font-medium max-lg:flex-col max-lg:space-x-0 max-lg:space-y-8">
             <NavLink to="/about">
-              <button className="group bg-blue-500 text-white px-12 text-xl py-4 rounded hover:bg-blue-600 transition flex items-center gap-2">
+              <button className="group bg-blue-500 text-white px-12 text-xl py-4 rounded hover:bg-blue-600 transition flex items-center gap-2 max-lg:text-base">
                 About Us
                 <FaArrowRightLong className="transition-transform duration-300 group-hover:translate-x-2" />
               </button>
             </NavLink>
 
             <NavLink to="/services">
-              <button className="group bg-black text-white px-12 text-xl py-4 rounded  transition flex items-center gap-2">
+              <button className="group bg-black text-white px-12 text-xl py-4 rounded  transition flex items-center gap-2 max-lg:text-base">
                 Our Services
                 <FaArrowRightLong className="transition-transform duration-300 group-hover:translate-x-2" />
               </button>
