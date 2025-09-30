@@ -3,7 +3,7 @@ import React from "react";
 
 const Bennersec = ({ title, subtitle, bgImage }) => {
   return (
-    <div className="w-full h-96 relative overflow-hidden">
+    <div className="w-full h-96 max-md:h-66 relative overflow-hidden">
       <img src={bgImage} alt={title} className="w-full h-full object-cover" />
       <div className="absolute inset-0 bg-black/50 flex items-center justify-center">
         <div className="text-center text-white">

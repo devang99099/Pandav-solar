@@ -17,7 +17,7 @@ const Header = () => {
           <div className="flex-shrink-0 ">
             <NavLink
               to="/"
-              className="text-4xl max-md:text-2xl font-bold text-blue-500"
+              className="text-4xl max-lg:text-2xl font-bold text-blue-500"
               onClick={() => setIsOpen(false)}
             >
               PANDAV SOLAR

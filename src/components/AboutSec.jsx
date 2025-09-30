@@ -2,21 +2,19 @@ import React from "react";
 
 import about from "../assets/about-man.jpeg";
 
-
 const AboutSec = () => {
   return (
     <div>
-      
       <section className="max-w-7xl mx-auto px-6 py-16 grid md:grid-cols-2 gap-10 items-center">
         <div>
           <h2 className="text-3xl font-bold mb-4">Who We Are</h2>
-          <p className="text-gray-700 leading-relaxed">
+          <p className="text-gray-700 font-medium leading-relaxed">
             PANDAV SOLAR is a trusted renewable energy company dedicated to
             delivering affordable and sustainable solar energy solutions. With
             years of expertise, we specialize in turnkey solar projects,
             liasoning services, rooftop installations, and solar water pumps.
           </p>
-          <p className="text-gray-700 mt-4 leading-relaxed">
+          <p className="text-gray-700 mt-4 font-medium leading-relaxed">
             Our team is committed to empowering industries, businesses, and
             households with eco-friendly energy solutions that reduce carbon
             footprint and ensure long-term cost savings.
