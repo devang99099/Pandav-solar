@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { FaMapMarkerAlt, FaPhoneAlt, FaEnvelope } from "react-icons/fa";
 
-import footerLogo from "../assets/footer-logo.jpeg";
+import newLogo from "../assets/new-logo.png";
 
 const Contact = () => {
   const [form, setForm] = useState({
@@ -49,7 +49,7 @@ const Contact = () => {
         {/* Left: Contact Info */}
         <div className="bg-[#111827] text-white p-10 rounded-l-lg">
           <h2 className="text-3xl font-bold mb-6">Contact Us</h2>
-          <img src={footerLogo} alt=" Logo " className="w-30" />
+          <img src={newLogo} alt=" Logo " className="w-30" />
           <p className="text-gray-300 mb-8">
             We'd love to hear from you! Whether you have questions about our
             services, need support, or just want to say hello, feel free to
