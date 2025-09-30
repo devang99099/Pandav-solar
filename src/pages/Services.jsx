@@ -1,7 +1,14 @@
 import React from "react";
+import service from "../assets/service.jpg";
 
-const Services = () => {
-  return <div>Services</div>;
-};
+import Bennersec from "../components/BennerSec";
+import Servicessec from "../components/ServiceSec";
 
-export default Services;
+export default function Services() {
+  return (
+    <div>
+      <Bennersec title="Services" subtitle="Services" bgImage={service} />
+      <Servicessec />
+    </div>
+  );
+}
