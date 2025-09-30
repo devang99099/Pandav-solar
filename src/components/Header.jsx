@@ -14,10 +14,10 @@ const Header = () => {
       <div className="max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8 overflow-hidden">
         <div className="flex justify-between py-5 items-center">
           {/* Logo */}
-          <div className="flex-shrink-0">
+          <div className="flex-shrink-0 ">
             <NavLink
               to="/"
-              className="text-4xl font-bold text-blue-500"
+              className="text-4xl max-md:text-2xl font-bold text-blue-500"
               onClick={() => setIsOpen(false)}
             >
               PANDAV SOLAR
@@ -71,24 +71,24 @@ const Header = () => {
           </div>
           <div className="max-md:hidden ">
             <NavLink
-              to="/quote"
+              to="/inquiry"
               className={({ isActive }) =>
                 isActive
-                  ? "ml-4 px-4 py-2 bg-blue-600 text-white rounded flex items-center gap-2 md:leading-72"
+                  ? "ml-4 px-4 py-2 bg-blue-600 text-white rounded flex items-center gap-2 "
                   : "ml-4 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition flex items-center gap-2 group"
               }
             >
-              Request a Quote
+              Request a Inquiry
               <FaArrowRightLong className="transition-transform duration-300 group-hover:translate-x-1" />
             </NavLink>
           </div>
 
           {/* Mobile Menu Button */}
-          <div className="md:hidden">
+          <div className="md:hidden items-center">
             <button
               onClick={() => setIsOpen(!isOpen)}
               type="button"
-              className="text-gray-700 focus:outline-none"
+              className="text-gray-700 focus:outline-none "
               aria-label="Toggle menu"
             >
               {isOpen ? (
@@ -151,7 +151,7 @@ const Header = () => {
 
           {/* Request a Quote Button (Mobile) */}
           <NavLink
-            to="/quote"
+            to="/inquiry"
             onClick={() => setIsOpen(false)}
             className={({ isActive }) =>
               isActive
@@ -159,7 +159,7 @@ const Header = () => {
                 : "block w-full text-center px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition flex justify-center items-center gap-2 group"
             }
           >
-            Request a Quote
+            Request a Inquiry
             <FaArrowRightLong className="transition-transform duration-300 group-hover:translate-x-1" />
           </NavLink>
         </div>

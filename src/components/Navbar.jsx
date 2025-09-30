@@ -9,24 +9,26 @@ import { FaInstagram, FaWhatsapp } from "react-icons/fa6";
 const Navbar = () => {
   return (
     <div className="bg-black shadow-md">
-      <div className="max-w-[1800px] items-center h-15 mx-auto">
-        <ul className="flex justify-between items-center   h-full px-4 sm:px-6 lg:px-8">
+      <div className="max-w-[1800px] items-center h-15 max-lg:hidden mx-auto">
+        <ul className="flex justify-between items-center max-lg:flex-col max-lg:items-start h-full px-4 sm:px-6 lg:px-8 max-lg:py-4  ">
           <li className="text-white text-lg items-center">
             <NavLink to="/" className="flex items-center gap-2">
-              <IoIosMailUnread /> info@pandavsolar.in
+              <IoIosMailUnread className="max-lg:text-2xl" />
+              info@pandavsolar.in
             </NavLink>
           </li>
           <li className="text-white text-lg">
             <NavLink to="/" className={"flex items-center gap-2"}>
-              <MdCall /> +91 70692 16551
+              <MdCall className="max-lg:text-2xl" /> +91 70692 16551
             </NavLink>
           </li>
           <li className="text-white text-lg">
             <NavLink to="/" className={"flex items-center gap-2"}>
-              <FiClock /> Mon - Sat 09AM - 7PM, Sunday - 9AM - 1PM
+              <FiClock className="max-lg:text-2xl" /> Mon - Sat 09AM - 7PM,
+              Sunday - 9AM - 1PM
             </NavLink>
           </li>
-          <li className="text-white text-lg flex items-center gap-4 pr-4">
+          <li className="text-white text-lg flex items-center gap-4 pr-4 max-lg:text-xl max:lg:mt-4">
             <FaFacebook />
             <FaInstagram />
             <FaWhatsapp />
