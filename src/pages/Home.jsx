@@ -6,6 +6,7 @@ import Servicessec from "../components/ServiceSec";
 import AboutSec from "../components/AboutSec";
 import ContactSec from "../components/ContactSec";
 import FAQ from "./FAQ";
+import AnimatedHeading from "../components/AnimatedHeading";
 
 const Home = () => {
   return (
@@ -15,9 +16,9 @@ const Home = () => {
         style={{ backgroundImage: `url(${solarBg})` }}
       >
         <div className="max-w-[1920px] w-full px-4 sm:px-6 lg:px-8 mx-auto">
-          <div className="py-6 max-w-4xl text-start">
+          <div className="py-6 max-w-[850PX] text-start">
             <h1 className="text-blue-500 text-7xl font-bold mb-4 leading-tight space-x-2 max-lg:text-5xl max-lg:leading-snug">
-              WELCOME TO PANDAV SOLAR
+              <AnimatedHeading text="WELCOME TO PANDAV SOLAR" />
             </h1>
           </div>
 

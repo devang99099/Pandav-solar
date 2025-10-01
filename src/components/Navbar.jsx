@@ -26,10 +26,10 @@ const Navbar = () => {
             </a>
           </li>
           <li className="text-white text-md">
-            <NavLink to="/" className={"flex items-center gap-2"}>
+            <p className={"flex items-center gap-2"}>
               <FiClock className="max-lg:text-2xl" /> Mon - Sat 09AM - 7PM,
               Sunday - 9AM - 1PM
-            </NavLink>
+            </p>
           </li>
           <li className="text-white text-lg flex items-center gap-8 pr-4 max-lg:text-xl max:lg:mt-4">
             <li className="text-white text-lg flex items-center gap-8 pr-4 max-lg:text-xl max:lg:mt-4">
