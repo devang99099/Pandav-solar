@@ -9,10 +9,10 @@ const sections = [
     id: 1,
     title: "Liasioning work & services",
     text: (
-      <>
+      <div className="text-start leading-7">
         PANDAV SOLAR proposed a various kind of liasoning work with services are
         as follows:
-        <ul className="mt-3 text-start list-none list-inside space-y-2">
+        <ul className="mt-5 text-start list-none list-inside space-y-2">
           <li className="flex items-center gap-2">
             <FaArrowRightLong />
             <span> Making an application for new registration/connection</span>
@@ -26,7 +26,7 @@ const sections = [
             <span> Documentation and compliance support</span>
           </li>
         </ul>
-      </>
+      </div>
     ),
     img: instalation,
   },
@@ -34,10 +34,10 @@ const sections = [
     id: 2,
     title: "EPC work of Solar Rooftop Systems",
     text: (
-      <>
+      <div className="text-start leading-7">
         PANDAV SOLAR offers turnkey solutions for grid-connected solar rooftop
         systems including site survey, planning, supply and commissioning.
-        <ul className="mt-3 text-start list-none list-inside space-y-2">
+        <ul className="mt-5 text-start list-none list-inside space-y-2">
           <li className="flex items-center gap-2">
             <FaArrowRightLong />
             <span> Manufacturing and Industrial unit</span>
@@ -59,7 +59,7 @@ const sections = [
             <span> Clinics & hospitals</span>
           </li>
         </ul>
-      </>
+      </div>
     ),
     img: rooftop,
   },
@@ -67,10 +67,10 @@ const sections = [
     id: 3,
     title: "Solar water heater system",
     text: (
-      <>
+      <div className="text-start leading-7">
         We are providing a customized based solution in the province of solar
         water heater project.
-        <ul className="mt-3 text-start list-none list-inside space-y-2">
+        <ul className="mt-5 text-start list-none list-inside space-y-2">
           <li className="flex items-center gap-2">
             <FaArrowRightLong />
             <span> Residential areas</span>
@@ -92,7 +92,7 @@ const sections = [
             <span> Hotel and restaurant etc.</span>
           </li>
         </ul>
-      </>
+      </div>
     ),
     img: heeter,
   },
@@ -135,7 +135,7 @@ export default function Servicessec() {
               {/* Content */}
               <div className="w-full md:w-1/2">
                 <h3 className="text-2xl font-bold">{s.title}</h3>
-                <div className="mt-4 text-gray-700">{s.text}</div>
+                <div className="mt-4  text-gray-700">{s.text}</div>
               </div>
             </div>
           </div>
