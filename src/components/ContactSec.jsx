@@ -62,7 +62,7 @@ const ContactSec = () => {
                   <div className="bg-white text-black p-3 rounded-full">
                     <FaMapMarkerAlt size={16} />
                   </div>
-                  <div>
+                  <div className="text-start">
                     <h4 className="text-lg font-semibold text-cyan-400">
                       Address
                     </h4>
@@ -77,7 +77,7 @@ const ContactSec = () => {
                   <div className="bg-white text-black p-3 rounded-full">
                     <FaPhoneAlt size={16} />
                   </div>
-                  <div>
+                  <div className="text-start">
                     <h4 className="text-lg font-semibold text-cyan-400">
                       Phone
                     </h4>
@@ -90,7 +90,7 @@ const ContactSec = () => {
                   <div className="bg-white text-black p-3 rounded-full">
                     <FaEnvelope size={16} />
                   </div>
-                  <div>
+                  <div className="text-start">
                     <h4 className="text-lg font-semibold text-cyan-400">
                       Email
                     </h4>
