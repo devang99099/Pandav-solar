@@ -119,9 +119,9 @@ export default function Servicessec() {
         >
           <div className="max-w-[1600px] mx-auto px-6">
             <div
-              className={`flex flex-col md:flex-row mx-20 ${
+              className={`flex flex-col md:flex-row lg:mx-20 ${
                 idx === 1 ? "md:flex-row-reverse" : ""
-              } gap-30 items-center`}
+              } lg:gap-30 gap-20 items-center`}
             >
               {/* Image */}
               <div className="rounded-xl overflow-hidden shadow  md:w-1/2">

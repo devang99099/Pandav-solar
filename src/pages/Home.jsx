@@ -45,21 +45,21 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <div className=" mx-auto px-4 sm:px-6 lg:px-8 py-8 text-center">
-        <h2 className="text-6xl font-bold">Our Services</h2>
+      <div className=" mx-auto px-4 sm:px-6 lg:px-8 py-8  text-center">
+        <h2 className="text-5xl font-bold">Our Services</h2>
         <Servicessec />
       </div>
-      <div className=" mx-auto px-4 sm:px-6 lg:px-8  text-center">
-        <h2 className="text-6xl font-bold">About </h2>
+      <div className=" mx-auto px-4 sm:px-6 lg:px-8 md:py-8 py-4  text-center">
+        <h2 className="text-5xl font-bold">About </h2>
         <AboutSec />
       </div>
 
-      <div className=" mx-auto px-4 sm:px-6 lg:px-8 pb-8 text-center">
+      <div className=" mx-auto px-4 sm:px-6 lg:px-8 md:py-8 py-4 text-center">
         <FAQ />
       </div>
 
-      <div className=" mx-auto px-4 sm:px-6 lg:px-8 pb-16 text-center">
-        <h2 className="text-6xl mb-10 font-bold">Contact </h2>
+      <div className=" mx-auto px-4 sm:px-6 lg:px-8 md:py-8 py-4 text-center">
+        <h2 className="text-5xl mb-10 font-bold">Contact </h2>
         <ContactSec />
       </div>
     </div>
