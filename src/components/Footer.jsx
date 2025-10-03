@@ -44,7 +44,7 @@ const Footer = () => {
           </div>
 
           {/* Right - Contact Info */}
-          <div className="space-y-2 max-w-60 text-start max-md:text-start">
+          <div className="space-y-2 max-w-64 text-start max-md:text-start">
             <h3 className="text-xl font-semibold mb-2 text-start max-md:text-start">
               Contact Us
             </h3>
@@ -60,10 +60,10 @@ const Footer = () => {
 
               <div>
                 <a
-                  href="mailto:info@pandavsolar.com"
+                  href="mailto:tusharpandav@mtfi@gmail.com"
                   className="hover:text-white transition-colors duration-300"
                 >
-                  ✉️ info@pandavsolar.com
+                  ✉️ tusharpandav@mtfi@gmail.com
                 </a>
               </div>
               <div>

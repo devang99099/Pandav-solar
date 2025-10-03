@@ -13,11 +13,11 @@ const Navbar = () => {
         <ul className="flex justify-between items-center max-lg:flex-col max-lg:items-start h-full px-4 sm:px-6 lg:px-8 max-lg:py-4  ">
           <li className="text-white text-md items-center">
             <a
-              href="mailto:info@pandavsolar.in"
+              href="mailto:tusharpandav@mtfi@gmail.com"
               className="flex items-center gap-2"
             >
               <IoIosMailUnread className="max-lg:text-2xl" />
-              info@pandavsolar.in
+              tusharpandav@mtfi@gmail.com
             </a>
           </li>
           <li className="text-white text-md">
