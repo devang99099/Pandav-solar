@@ -12,9 +12,6 @@ export default function Services() {
         <Bennersec title="Services" subtitle="Services" bgImage={service} />
         <Servicessec />
       </div>
-      <div>
-        <FAQ />
-      </div>
     </>
   );
 }
