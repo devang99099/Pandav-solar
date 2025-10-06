@@ -19,8 +19,25 @@ const Inquiry = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Form Submitted:", formData);
-    alert("Your inquiry has been submitted!");
+
+    const { name, email, phone, address, pincode, message } = formData;
+
+    const whatsappMessage = `New Inquiry Received 👇
+
+🔹 Name: ${name}
+📧 Email: ${email}
+📞 Phone: ${phone}
+🏠 Address: ${address}
+📮 PinCode: ${pincode}
+📝 Message: ${message}`;
+
+    // Replace YOUR_NUMBER with your actual WhatsApp number (with country code, no +)
+    const whatsappURL = `https://wa.me/91YOUR_NUMBER?text=${encodeURIComponent(
+      whatsappMessage
+    )}`;
+
+    window.open(whatsappURL, "_blank");
+
     setFormData({
       name: "",
       email: "",
