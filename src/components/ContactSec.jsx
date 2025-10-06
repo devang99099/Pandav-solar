@@ -1,52 +1,35 @@
 import React, { useState } from "react";
 import { FaMapMarkerAlt, FaPhoneAlt, FaEnvelope } from "react-icons/fa";
 import newLogo from "../assets/new-logo.jpg";
+import emailjs from "emailjs-com";
 
 const ContactSec = () => {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
   const [submitted, setSubmitted] = useState(false);
   const [fadeOut, setFadeOut] = useState(false);
 
-  // Replace with your Formspree form endpoint
-  const formspreeEndpoint = "https://formspree.io/f/xnngzobq";
+  // Replace these with your EmailJS keys
+  const SERVICE_ID = "service_h4y1k8m";
+  const TEMPLATE_ID = "template_c5ctbt6";
+  const USER_ID = "saZNyF6d7aBQXU0TH";
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleFormSubmit = async (e) => {
+  const handleFormSubmit = (e) => {
     e.preventDefault();
 
-    // Check if email already submitted
-    const storedEmails =
-      JSON.parse(localStorage.getItem("submittedEmails")) || [];
-    if (storedEmails.includes(form.email)) {
-      alert("This email has already submitted a message.");
-      return;
-    }
-
-    // Basic validation
     if (!form.name || !form.email || !form.message) {
       alert("All fields are required!");
       return;
     }
 
-    try {
-      // Submit form data to Formspree using fetch API
-      const response = await fetch(formspreeEndpoint, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          name: form.name,
-          email: form.email,
-          message: form.message,
-        }),
-      });
-
-      if (response.ok) {
-        // Add email to localStorage so it can't submit again
-        storedEmails.push(form.email);
-        localStorage.setItem("submittedEmails", JSON.stringify(storedEmails));
+    // Send email using EmailJS
+    emailjs
+      .send(SERVICE_ID, TEMPLATE_ID, form, USER_ID)
+      .then((response) => {
+        // Add email to localStorage
 
         setSubmitted(true);
         setFadeOut(false);
@@ -54,13 +37,11 @@ const ContactSec = () => {
 
         setTimeout(() => setFadeOut(true), 3000);
         setTimeout(() => setSubmitted(false), 3500);
-      } else {
-        alert("There was a problem submitting the form. Please try again.");
-      }
-    } catch (error) {
-      alert("Network error! Please try again later.");
-      console.error(error);
-    }
+      })
+      .catch((err) => {
+        alert("Failed to send message. Please try again.");
+        console.error("EmailJS error:", err);
+      });
   };
 
   return (
