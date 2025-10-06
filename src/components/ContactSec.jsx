@@ -3,157 +3,175 @@ import { FaMapMarkerAlt, FaPhoneAlt, FaEnvelope } from "react-icons/fa";
 import newLogo from "../assets/new-logo.jpg";
 
 const ContactSec = () => {
-  const [form, setForm] = useState({
-    name: "",
-    email: "",
-    message: "",
-  });
-
+  const [form, setForm] = useState({ name: "", email: "", message: "" });
   const [submitted, setSubmitted] = useState(false);
   const [fadeOut, setFadeOut] = useState(false);
 
+  // Replace with your Formspree form endpoint
+  const formspreeEndpoint = "https://formspree.io/f/xnngzobq";
+
   const handleChange = (e) => {
-    setForm({
-      ...form,
-      [e.target.name]: e.target.value,
-    });
+    setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleFormSubmit = async (e) => {
     e.preventDefault();
 
+    // Check if email already submitted
+    const storedEmails =
+      JSON.parse(localStorage.getItem("submittedEmails")) || [];
+    if (storedEmails.includes(form.email)) {
+      alert("This email has already submitted a message.");
+      return;
+    }
+
+    // Basic validation
     if (!form.name || !form.email || !form.message) {
       alert("All fields are required!");
       return;
     }
 
-    console.log("Form Submitted:", form);
-    setSubmitted(true);
-    setFadeOut(false);
+    try {
+      // Submit form data to Formspree using fetch API
+      const response = await fetch(formspreeEndpoint, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: form.name,
+          email: form.email,
+          message: form.message,
+        }),
+      });
 
-    setForm({ name: "", email: "", message: "" });
+      if (response.ok) {
+        // Add email to localStorage so it can't submit again
+        storedEmails.push(form.email);
+        localStorage.setItem("submittedEmails", JSON.stringify(storedEmails));
 
-    setTimeout(() => {
-      setFadeOut(true);
-    }, 3000);
+        setSubmitted(true);
+        setFadeOut(false);
+        setForm({ name: "", email: "", message: "" });
 
-    setTimeout(() => {
-      setSubmitted(false);
-    }, 3500);
+        setTimeout(() => setFadeOut(true), 3000);
+        setTimeout(() => setSubmitted(false), 3500);
+      } else {
+        alert("There was a problem submitting the form. Please try again.");
+      }
+    } catch (error) {
+      alert("Network error! Please try again later.");
+      console.error(error);
+    }
   };
 
   return (
     <div>
-      <div>
-        <div className="bg-cover bg-center flex items-center justify-center px-6 py-20 bg-gray-100">
-          <div className="max-w-6xl w-full bg-white rounded-lg shadow-lg grid md:grid-cols-2">
-            {/* Left: Contact Info */}
-            <div className="bg-[#111827] text-white p-10 rounded-l-lg">
-              <img src={newLogo} alt=" Logo " className="w-40 mb-5" />
-              <p className="text-gray-300 mb-5">
-                We'd love to hear from you! Whether you have questions about our
-                services, need support, or just want to say hello, feel free to
-                reach out.
-              </p>
+      <div className="bg-cover bg-center flex items-center justify-center px-6 py-20 bg-gray-100">
+        <div className="max-w-6xl w-full bg-white rounded-lg shadow-lg grid md:grid-cols-2">
+          {/* Left: Contact Info */}
+          <div className="bg-[#111827] text-white p-10 rounded-l-lg">
+            <img src={newLogo} alt="Logo" className="w-40 mb-5" />
+            <p className="text-gray-300 mb-5">
+              We'd love to hear from you! Whether you have questions about our
+              services, need support, or just want to say hello, feel free to
+              reach out.
+            </p>
 
-              <div className="space-y-5">
-                {/* Address */}
-                <div className="flex items-center gap-3 ">
-                  <div className="bg-white text-black p-3 rounded-full">
-                    <FaMapMarkerAlt size={16} />
-                  </div>
-                  <div className="text-start">
-                    <h4 className="text-lg font-semibold text-cyan-400">
-                      Address
-                    </h4>
-                    <p className="text-sm text-gray-300">
-                      123 Solar Street, India
-                    </p>
-                  </div>
+            <div className="space-y-5">
+              {/* Address */}
+              <div className="flex items-center gap-3">
+                <div className="bg-white text-black p-3 rounded-full">
+                  <FaMapMarkerAlt size={16} />
                 </div>
-
-                {/* Phone */}
-                <div className="flex items-center gap-3">
-                  <div className="bg-white text-black p-3 rounded-full">
-                    <FaPhoneAlt size={16} />
-                  </div>
-                  <div className="text-start">
-                    <h4 className="text-lg font-semibold text-cyan-400">
-                      Phone
-                    </h4>
-                    <p className="text-sm text-gray-300">7069216551</p>
-                  </div>
+                <div className="text-start">
+                  <h4 className="text-lg font-semibold text-cyan-400">
+                    Address
+                  </h4>
+                  <p className="text-sm text-gray-300">
+                    123 Solar Street, India
+                  </p>
                 </div>
+              </div>
 
-                {/* Email */}
-                <div className="flex items-center gap-3">
-                  <div className="bg-white text-black p-3 rounded-full">
-                    <FaEnvelope size={16} />
-                  </div>
-                  <div className="text-start">
-                    <h4 className="text-lg font-semibold text-cyan-400">
-                      Email
-                    </h4>
-                    <p className="text-sm text-gray-300">
-                      tusharpandav.mtfi@gmail.com
-                    </p>
-                  </div>
+              {/* Phone */}
+              <div className="flex items-center gap-3">
+                <div className="bg-white text-black p-3 rounded-full">
+                  <FaPhoneAlt size={16} />
+                </div>
+                <div className="text-start">
+                  <h4 className="text-lg font-semibold text-cyan-400">Phone</h4>
+                  <p className="text-sm text-gray-300">7069216551</p>
+                </div>
+              </div>
+
+              {/* Email */}
+              <div className="flex items-center gap-3">
+                <div className="bg-white text-black p-3 rounded-full">
+                  <FaEnvelope size={16} />
+                </div>
+                <div className="text-start">
+                  <h4 className="text-lg font-semibold text-cyan-400">Email</h4>
+                  <p className="text-sm text-gray-300">
+                    tusharpandav.mtfi@gmail.com
+                  </p>
                 </div>
               </div>
             </div>
+          </div>
 
-            {/* Right: Contact Form */}
-            <div className="p-10">
-              <h3 className="text-2xl font-bold mb-6 text-gray-800">
-                Send Message
-              </h3>
+          {/* Right: Contact Form */}
+          <div className="p-10">
+            <h3 className="text-2xl font-bold mb-6 text-gray-800">
+              Send Message
+            </h3>
 
-              {submitted && (
-                <div
-                  className={`bg-green-100 text-green-800 p-3 rounded text-center mb-4 transition-opacity duration-1000 ${
-                    fadeOut ? "opacity-0" : "opacity-100"
-                  }`}
-                >
-                  Thank you for reaching out! We will get back to you soon.
-                </div>
-              )}
+            {submitted && (
+              <div
+                className={`bg-green-100 text-green-800 p-3 rounded text-center mb-4 transition-opacity duration-1000 ${
+                  fadeOut ? "opacity-0" : "opacity-100"
+                }`}
+              >
+                Thank you for reaching out! We will get back to you soon.
+              </div>
+            )}
 
-              <form onSubmit={handleSubmit} className="space-y-5">
-                <input
-                  type="text"
-                  name="name"
-                  placeholder="Full Name"
-                  value={form.name}
-                  onChange={handleChange}
-                  className="w-full border-b border-gray-400 focus:outline-none py-2"
-                />
+            <form onSubmit={handleFormSubmit} className="space-y-5">
+              <input
+                type="text"
+                name="name"
+                placeholder="Full Name"
+                value={form.name}
+                onChange={handleChange}
+                required
+                className="w-full border-b border-gray-400 focus:outline-none py-2"
+              />
 
-                <input
-                  type="email"
-                  name="email"
-                  placeholder="Email"
-                  value={form.email}
-                  onChange={handleChange}
-                  className="w-full border-b border-gray-400 focus:outline-none py-2"
-                />
+              <input
+                type="email"
+                name="email"
+                placeholder="Email"
+                value={form.email}
+                onChange={handleChange}
+                required
+                className="w-full border-b border-gray-400 focus:outline-none py-2"
+              />
 
-                <textarea
-                  name="message"
-                  placeholder="Type your Message..."
-                  rows="4"
-                  value={form.message}
-                  onChange={handleChange}
-                  className="w-full border-b border-gray-400 focus:outline-none py-2"
-                />
+              <textarea
+                name="message"
+                placeholder="Type your Message..."
+                rows="4"
+                value={form.message}
+                onChange={handleChange}
+                required
+                className="w-full border-b border-gray-400 focus:outline-none py-2"
+              />
 
-                <button
-                  type="submit"
-                  className="w-full bg-cyan-500 text-white py-2 font-semibold rounded-md hover:bg-cyan-600 transition"
-                >
-                  Send
-                </button>
-              </form>
-            </div>
+              <button
+                type="submit"
+                className="w-full bg-cyan-500 text-white py-2 font-semibold rounded-md hover:bg-cyan-600 transition"
+              >
+                Send
+              </button>
+            </form>
           </div>
         </div>
       </div>
