@@ -7,14 +7,14 @@ const AnimatedHeading = ({ text }) => {
     if (visibleLetters < text.length) {
       const timeout = setTimeout(() => {
         setVisibleLetters(visibleLetters + 1);
-      }, 80); 
+      }, 80);
 
       return () => clearTimeout(timeout);
     }
   }, [visibleLetters, text.length]);
 
   return (
-    <h1 className="text-blue-500 text-7xl font-bold mb-4 leading-tight max-lg:text-5xl max-lg:leading-snug flex flex-wrap">
+    <div className="text-blue-500 text-7xl font-bold mb-4 leading-tight max-lg:text-5xl max-lg:leading-snug flex flex-wrap">
       {text.split("").map((char, index) => (
         <span
           key={index}
@@ -28,7 +28,7 @@ const AnimatedHeading = ({ text }) => {
           {char === " " ? "\u00A0" : char}
         </span>
       ))}
-    </h1>
+    </div>
   );
 };
 

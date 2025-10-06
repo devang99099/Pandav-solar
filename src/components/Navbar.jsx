@@ -13,11 +13,11 @@ const Navbar = () => {
         <ul className="flex justify-between items-center max-lg:flex-col max-lg:items-start h-full px-4 sm:px-6 lg:px-8 max-lg:py-4  ">
           <li className="text-white text-md items-center">
             <a
-              href="mailto:tusharpandav@mtfi@gmail.com"
+              href="mailto:tusharpandav.mtfi@gmail.com"
               className="flex items-center gap-2"
             >
               <IoIosMailUnread className="max-lg:text-2xl" />
-              tusharpandav@mtfi@gmail.com
+              tusharpandav.mtfi@gmail.com
             </a>
           </li>
           <li className="text-white text-md">
@@ -31,7 +31,7 @@ const Navbar = () => {
               Sunday - 9AM - 1PM
             </p>
           </li>
-          <li className="text-white text-lg flex items-center gap-8 pr-4 max-lg:text-xl max:lg:mt-4">
+          <ul className="text-white text-lg flex items-center gap-8 pr-4 max-lg:text-xl max:lg:mt-4">
             <li className="text-white text-lg flex items-center gap-8 pr-4 max-lg:text-xl max:lg:mt-4">
               <a
                 href="https://www.instagram.com/pandav_solar?igsh=bGo0YW16MXdsc21x"
@@ -58,7 +58,7 @@ const Navbar = () => {
                 <FaWhatsapp />
               </a>
             </li>
-          </li>
+          </ul>
         </ul>
       </div>
     </div>

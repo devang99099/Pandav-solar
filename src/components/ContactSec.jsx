@@ -95,7 +95,7 @@ const ContactSec = () => {
                       Email
                     </h4>
                     <p className="text-sm text-gray-300">
-                      tusharpandav@mtfi@gmail.com
+                      tusharpandav.mtfi@gmail.com
                     </p>
                   </div>
                 </div>
